@@ -10,6 +10,11 @@ jobs:
       - run:
           command: sudo npm i -g serverless npm@latest
       - run:
+          command: ls
+      - run:
+          command: pwd
+
+      - run:
           command: npm install
 
       - run:
