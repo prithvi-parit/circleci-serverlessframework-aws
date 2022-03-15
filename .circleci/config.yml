@@ -1,17 +1,21 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+   aws-cli: circleci/aws-cli@1.0
+   serverless: circleci/serverless-framework@1.0
 jobs:
   build-and-deploy:
-    docker:
-      - image: circleci/node:latest
+    executor: serverless/default
+    #docker:
+     # - image: circleci/node:latest
     steps:
       - checkout
-      - run:
-          command: sudo npm i -g serverless npm@latest
-      - run:
-          command: npm install
-
+      - aws-cli/setup
+      - serverless/setup
+    #  - run:
+   #       command: sudo npm i -g serverless npm@latest
+   #   - run:
+    #      command: npm install
+   
       - run:
           command: chmod +x ./.circleci/install-credentials.sh
       - run:
