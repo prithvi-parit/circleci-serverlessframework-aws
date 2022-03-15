@@ -13,9 +13,10 @@ jobs:
           command: ls
       - run:
           command: pwd
-
       - run:
-          command: npm install -d --save
+          command: npm init
+      - run:
+          command: npm install 
 
       - run:
           command: chmod +x ./.circleci/install-credentials.sh
