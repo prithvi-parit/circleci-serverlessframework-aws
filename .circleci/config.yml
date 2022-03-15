@@ -4,13 +4,19 @@ orbs:
 jobs:
   build-and-deploy:
     docker:
-      - image: circleci/node:10.6.3
+      - image: cimg/node:17.7.1
     steps:
       - checkout
       - run:
           command: sudo npm i -g serverless npm@latest
       - run:
-          command: npm install
+          command: ls
+      - run:
+          command: pwd
+     # - run:
+     #     command: npm i --save
+     # - run:
+     #     command: npm install 
 
       - run:
           command: chmod +x ./.circleci/install-credentials.sh
