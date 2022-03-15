@@ -9,7 +9,7 @@ jobs:
      # - image: circleci/node:latest
     steps:
       - checkout
-      - aws-cli/setup
+    #  - aws-cli/setup
       - serverless/setup
     #  - run:
    #       command: sudo npm i -g serverless npm@latest
