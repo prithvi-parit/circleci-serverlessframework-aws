@@ -1,4 +1,4 @@
-service: python-testing-serverless-5
+service: python-testing-serverless-6
 
 frameworkVersion: '3'
 
